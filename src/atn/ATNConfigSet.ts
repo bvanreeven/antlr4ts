@@ -597,7 +597,7 @@ export class ATNConfigSet implements JavaSet<ATNConfig> {
 class ATNConfigSetIterator implements JavaIterator<ATNConfig> {
 	index: number = -1;
 	removed: boolean = false;
-	set: ATNConfigSet;
+	set!: ATNConfigSet;
 	configs: ATNConfig[];
 
 	constructor(set: ATNConfigSet, configs: ATNConfig[]) {

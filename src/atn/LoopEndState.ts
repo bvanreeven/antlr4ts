@@ -11,7 +11,7 @@ import { Override } from '../Decorators';
 
 /** Mark the end of a * or + loop. */
 export class LoopEndState extends ATNState {
-	loopBackState: ATNState;
+	loopBackState!: ATNState;
 
 	@Override
 	get stateType(): ATNStateType {

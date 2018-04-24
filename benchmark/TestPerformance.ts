@@ -1569,8 +1569,8 @@ export class FileParseResult {
 }
 
 class StatisticsLexerATNSimulator extends LexerATNSimulator {
-	totalTransitions: number;
-	computedTransitions: number;
+	totalTransitions!: number;
+	computedTransitions!: number;
 
 	constructor(atn: ATN);
 	constructor(atn: ATN, recog: Lexer);
@@ -1604,7 +1604,7 @@ class StatisticsParserATNSimulator extends ParserATNSimulator {
 	computedTransitions: Uint32Array;
 	fullContextTransitions: Uint32Array;
 
-	private decision: number;
+	private decision!: number;
 
 	constructor(atn: ATN, parser: Parser) {
 		super(atn, parser);
@@ -1704,7 +1704,7 @@ class DescriptiveLexerErrorListener implements ANTLRErrorListener<number> {
 
 class SummarizingDiagnosticErrorListener extends DiagnosticErrorListener {
 	private _sllConflict: BitSet | undefined;
-	private _sllConfigs: ATNConfigSet;
+	private _sllConfigs!: ATNConfigSet;
 
 	@Override
 	reportAmbiguity(recognizer: Parser, dfa: DFA, startIndex: number, stopIndex: number, exact: boolean, ambigAlts: BitSet | undefined, configs: ATNConfigSet): void {

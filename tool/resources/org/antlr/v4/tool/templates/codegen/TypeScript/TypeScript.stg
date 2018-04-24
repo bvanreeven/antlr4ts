@@ -272,7 +272,7 @@ case <index>:
 >>
 
 RuleFunction(currentRule,args,code,locals,ruleCtx,altLabelCtxs,namedActions,finallyAction,postamble,exceptions) ::= <<
-@RuleVersion(<namedActions.version; null="0">)
+@RuleVersion\<<currentRule.ctxType>\>(<namedActions.version; null="0">)
 <if(currentRule.modifiers)><currentRule.modifiers:{f | <f> }><else>public <endif><currentRule.name>(<args; separator=",">): <currentRule.ctxType> {
 	let _localctx: <currentRule.ctxType> = new <currentRule.ctxType>(this._ctx, this.state<currentRule.args:{a | , <a.name>}>);
 	this.enterRule(_localctx, <currentRule.startState>, <parser.name>.RULE_<currentRule.name>);
@@ -381,7 +381,7 @@ LeftRecursiveRuleFunction(currentRule,args,code,locals,ruleCtx,altLabelCtxs,
 
 <if(currentRule.modifiers)><currentRule.modifiers:{f | <f> }><else>public <endif><currentRule.name>(<args; separator=", ">): <currentRule.ctxType>;
 <if(currentRule.modifiers)><currentRule.modifiers:{f | <f> }><else>public <endif><currentRule.name>(<args; separator=", "><if(args)>, <endif>_p: number): <currentRule.ctxType>;
-@RuleVersion(<namedActions.version; null="0">)
+@RuleVersion\<<currentRule.ctxType>\>(<namedActions.version; null="0">)
 <if(currentRule.modifiers)><currentRule.modifiers:{f | <f> }><else>public <endif><currentRule.name>(<args; separator=", "><if(args)>, <endif>_p?: number): <currentRule.ctxType> {
 	if (_p === undefined) {
 		_p = 0;
@@ -694,10 +694,10 @@ SetNonLocalAttr(s, rhsChunks)	  ::=
 
 AddToLabelList(a) ::= "<ctx(a.label)>._<a.listName>.push(<labelref(a.label)>);"
 
-TokenDecl(t) ::= "_<t.name>: <TokenLabelType()>"
+TokenDecl(t) ::= "_<t.name>!: <TokenLabelType()>"
 TokenTypeDecl(t) ::= "let <t.name>: number;"
 TokenListDecl(t) ::= "_<t.name>: Token[] = []"
-RuleContextDecl(r) ::= "_<r.name>: <r.ctxName>"
+RuleContextDecl(r) ::= "_<r.name>!: <r.ctxName>"
 RuleContextListDecl(rdecl) ::= "_<rdecl.name>: <rdecl.ctxName>[] = []"
 
 ContextTokenGetterDecl(t)      ::=

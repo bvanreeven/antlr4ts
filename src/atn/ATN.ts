@@ -41,12 +41,12 @@ export class ATN {
 	/**
 	 * Maps from rule index to starting state number.
 	 */
-	ruleToStartState: RuleStartState[];
+	ruleToStartState!: RuleStartState[];
 
 	/**
 	 * Maps from rule index to stop state number.
 	 */
-	ruleToStopState: RuleStopState[];
+	ruleToStopState!: RuleStopState[];
 
 	@NotNull
 	modeNameToStartState: Map<string, TokensStartState> =
@@ -69,13 +69,13 @@ export class ATN {
 	 * {@link ATNDeserializationOptions#isGenerateRuleBypassTransitions}
 	 * deserialization option was specified; otherwise, this is {@code null}.
 	 */
-	ruleToTokenType: Int32Array;
+	ruleToTokenType!: Int32Array;
 
 	/**
 	 * For lexer ATNs, this is an array of {@link LexerAction} objects which may
 	 * be referenced by action transitions in the ATN.
 	 */
-	lexerActions: LexerAction[];
+	lexerActions!: LexerAction[];
 
 	@NotNull
 	modeToStartState: TokensStartState[] = [];

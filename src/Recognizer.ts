@@ -32,7 +32,7 @@ export abstract class Recognizer<Symbol, ATNInterpreter extends ATNSimulator> {
 	@NotNull
 	private readonly _listeners: ANTLRErrorListener<Symbol>[] = [ConsoleErrorListener.INSTANCE];
 
-	protected _interp: ATNInterpreter;
+	protected _interp!: ATNInterpreter;
 
 	private _stateNumber = -1;
 
