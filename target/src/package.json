@@ -1,6 +1,6 @@
 {
-  "name": "antlr4ts",
-  "version": "0.4.0-dev",
+  "name": "@mendix/antlr4ts",
+  "version": "0.0.1",
   "description": "ANTLR 4 runtime for JavaScript written in Typescript",
   "main": "index.js",
   "scripts": {},

@@ -1,6 +1,6 @@
 {
-  "name": "antlr4ts-cli",
-  "version": "0.4.0-dev",
+  "name": "@mendix/antlr4ts-cli",
+  "version": "0.0.1",
   "preferGlobal": true,
   "description": "ANTLR 4 command line tool for TypeScript",
   "files": [
@@ -13,8 +13,7 @@
     "antlr4ts": "./antlr4ts"
   },
   "scripts": {
-    "prepublish": "mvn verify",
-    "postpack": "mv %npm_package_name%-%npm_package_version%.tgz ../%npm_package_name%.tgz"
+    "prepublish": "mvn verify"
   },
   "repository": {
     "type": "git",
